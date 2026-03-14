@@ -1,0 +1,42 @@
+package com.controller;
+
+import java.util.List;
+
+import com.dao.UserDaoImpl;
+import com.model.Customer;
+
+public class test_controller {
+	
+	public static void main(String[] args) {
+		Customer customer = new Customer();
+		
+		customer.setUsername("Nilayyy");
+		customer.setPassword("Nilay@53435364");
+		customer.setEmail("Nilay243gmail.com");
+		
+		UserDaoImpl dao = new UserDaoImpl();
+//		dao.Saveuser(customer);
+//		System.out.println("data inserted succesfully");
+		
+		
+//		List<Customer> list=dao.getAllUsers();
+//		for (Customer c : list) {
+//			System.out.println(c.getUsername());
+//		}
+		
+		
+        dao.getAllUsers().forEach(c -> System.out.println(c.getId()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getPassword()));
+
+//	    dao.getAllUsers().stream().map(c->c.getId()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getEmail()).forEach(System.out::println);
+	
+//		dao.getAllUsers().stream().filter(c-> c.getUsername().startsWith("N")).forEach(c->System.out.println(c.getUsername()));
+	
+	
+		
+		
+	}
+	
+	
+	
+
+}
